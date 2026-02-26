@@ -6,8 +6,9 @@
     <title>My App Store</title>
     <style>
         body { font-family: sans-serif; background-color: #0d1117; color: white; text-align: center; padding: 50px; }
-        .btn { background-color: #238636; color: white; padding: 15px 25px; text-decoration: none; border-radius: 8px; display: block; margin: 20px auto; font-weight: bold; max-width: 200px; margin-left: auto; margin-right: auto; }
-        .container { border: 1px solid #30363d; padding: 20px; border-radius: 10px; background: #161b22; }
+        .btn { background-color: #238636; color: white; padding: 15px 25px; text-decoration: none; border-radius: 8px; display: block; margin: 20px auto; font-weight: bold; max-width: 250px; margin-left: auto; margin-right: auto; transition: 0.3s; }
+        .btn:hover { background-color: #2ea44f; transform: scale(1.05); }
+        .container { border: 1px solid #30363d; padding: 20px; border-radius: 10px; background: #161b22; max-width: 400px; margin: auto; }
     </style>
 </head>
 <body>
@@ -15,9 +16,9 @@
         <h1>App Store</h1>
         <p>Download Latest Open Source Apps</p>
 
-        <a href="https://f-droid.org/repo/com.termux_118.apk" class="btn">Download Termux</a>
+        <a href="https://github.com/termux/termux-app/releases/download/v0.118.0/termux-app_v0.118.0+github-debug_arm64-v8a.apk" class="btn" target="_blank">Download Termux v0.118</a>
 
-        <a href="https://store.nethunter.com/NetHunterStore.apk" class="btn">Download NetHunter</a>
+        <a href="https://store.nethunter.com/NetHunterStore.apk" class="btn" target="_blank">Download NetHunter Store</a>
 
         <p>Website is Live!</p>
     </div>

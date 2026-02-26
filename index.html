@@ -3,109 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jon00799 | Advanced App Store</title>
+    <title>Jon00799 | Mega App Library</title>
     <style>
-        :root { --bg: #0d1117; --card: #161b22; --text: #f0f6fc; --desc: #8b949e; --btn: #238636; --accent: #58a6ff; }
-        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; text-align: center; }
-        .container { max-width: 600px; margin: auto; }
-        .header { margin-bottom: 30px; }
-        .search-bar { width: 100%; padding: 12px; margin-bottom: 25px; border-radius: 8px; border: 1px solid #30363d; background: var(--bg); color: white; box-sizing: border-box; font-size: 16px; }
-        .category-title { text-align: left; color: var(--accent); font-size: 18px; margin: 20px 0 10px 5px; border-left: 4px solid var(--accent); padding-left: 10px; }
-        .app-card { background: var(--card); border: 1px solid #30363d; padding: 15px; border-radius: 12px; margin-bottom: 12px; display: flex; align-items: center; text-align: left; }
-        .app-icon { font-size: 28px; margin-right: 15px; min-width: 40px; text-align: center; }
-        .app-info { flex-grow: 1; }
-        .app-name { font-weight: bold; font-size: 16px; display: block; }
-        .app-desc { font-size: 12px; color: var(--desc); line-height: 1.4; }
-        .btn { background-color: var(--btn); color: white; padding: 8px 16px; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 600; white-space: nowrap; margin-left: 10px; }
-        .btn:hover { background-color: #2ea44f; }
+        body { font-family: sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; color: #333; }
+        .header { background-color: #0067b8; color: white; padding: 15px; text-align: left; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .header h1 { margin: 0; font-size: 18px; }
+        .search-container { background: white; border-radius: 4px; display: flex; padding: 2px; width: 60%; }
+        .search-container input { border: none; padding: 8px; width: 100%; outline: none; border-radius: 4px; }
+        .main-content { padding: 10px; max-width: 800px; margin: auto; }
+        .app-list { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .app-item { display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #eee; }
+        .app-icon { width: 45px; height: 45px; margin-right: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; background: #f0f0f0; border-radius: 10px; }
+        .app-details { flex-grow: 1; text-align: left; }
+        .app-title { font-weight: bold; font-size: 15px; color: #0067b8; display: block; }
+        .app-desc { font-size: 12px; color: #666; display: block; margin-top: 2px; }
+        .app-version { font-size: 10px; color: #999; margin-top: 4px; display: block; }
+        .download-btn { background-color: #0067b8; color: white; padding: 6px 12px; border-radius: 4px; font-size: 11px; font-weight: bold; text-decoration: none; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h1>📦 Jon00799 Store</h1>
-        <p style="color: var(--desc);">Safe & Official Cyber Security Tools</p>
+<div class="header">
+    <h1>Mega Store</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="searchApps()" placeholder="Duniya bhar ki 100+ apps dhoondein...">
     </div>
+</div>
 
-    <input type="text" id="searchInput" onkeyup="searchApps()" placeholder="Duniya bhar ki apps dhoondein..." class="search-bar">
+<div class="main-content">
+    <div class="app-list" id="appGrid">
+        
+        <div class="app-item"><div class="app-icon">💻</div><div class="app-details"><span class="app-title">Termux</span><span class="app-desc">Terminal emulator & Linux environment.</span><span class="app-version">GPL-3.0</span></div><a href="https://github.com/termux/termux-app/releases" class="download-btn">Download</a></div>
 
-    <div id="appGrid">
-        <div class="category-group">
-            <div class="category-title">Terminals & Linux</div>
-            
-            <div class="app-card">
-                <div class="app-icon">💻</div>
-                <div class="app-info"><span class="app-name">Termux</span><span class="app-desc">Linux environment for Android.</span></div>
-                <a href="https://github.com/termux/termux-app/releases/download/v0.118.0/termux-app_v0.118.0+github-debug_arm64-v8a.apk" class="btn">Download</a>
-            </div>
+        <div class="app-item"><div class="app-icon">🧅</div><div class="app-details"><span class="app-title">Tor Browser</span><span class="app-desc">Privacy-focused web browser.</span><span class="app-version">GPL-3.0</span></div><a href="https://www.torproject.org/download/" class="download-btn">Download</a></div>
 
-            <div class="app-card">
-                <div class="app-icon">🐚</div>
-                <div class="app-info"><span class="app-name">LADB Shell</span><span class="app-desc">Local ADB Shell (No PC).</span></div>
-                <a href="https://github.com/tytydraco/LADB/releases" class="btn">Source</a>
-            </div>
-            
-            <div class="app-card">
-                <div class="app-icon">🚀</div>
-                <div class="app-info"><span class="app-name">UserLAnd</span><span class="app-desc">Run Ubuntu/Kali easily.</span></div>
-                <a href="https://github.com/CypherpunkArmory/UserLAnd/releases" class="btn">Get</a>
-            </div>
-        </div>
+        <div class="app-item"><div class="app-icon">🤖</div><div class="app-details"><span class="app-title">Orbot</span><span class="app-desc">Tor proxy for all apps.</span><span class="app-version">BSD-3-Clause</span></div><a href="https://guardianproject.info/releases/Orbot-latest.apk" class="download-btn">Download</a></div>
 
-        <div class="category-group">
-            <div class="category-title">Privacy & Anonymity</div>
+        <div class="app-item"><div class="app-icon">🛡️</div><div class="app-details"><span class="app-title">InviZible Pro</span><span class="app-desc">DNSCrypt, Tor, and Purple I2P.</span><span class="app-version">GPL-3.0</span></div><a href="https://f-droid.org/repo/pavel.asatryan.invizible_5901.apk" class="download-btn">Download</a></div>
 
-            <div class="app-card">
-                <div class="app-icon">🧅</div>
-                <div class="app-info"><span class="app-name">Tor Browser</span><span class="app-desc">Browse anonymously.</span></div>
-                <a href="https://dist.torproject.org/torbrowser/13.0.10/tor-browser-android-aarch64-13.0.10.apk" class="btn">Download</a>
-            </div>
+        <div class="app-item"><div class="app-icon">🐉</div><div class="app-details"><span class="app-title">NetHunter Store</span><span class="app-desc">Security apps collection.</span><span class="app-version">GPL-3.0</span></div><a href="https://store.nethunter.com/NetHunterStore.apk" class="download-btn">Download</a></div>
 
-            <div class="app-card">
-                <div class="app-icon">🤖</div>
-                <div class="app-info"><span class="app-name">Orbot</span><span class="app-desc">Tor Proxy for Apps.</span></div>
-                <a href="https://guardianproject.info/releases/Orbot-latest.apk" class="btn">Download</a>
-            </div>
+        <div class="app-item"><div class="app-icon">🐚</div><div class="app-details"><span class="app-title">LADB Terminal</span><span class="app-desc">Local ADB Shell (No PC).</span><span class="app-version">Apache-2.0</span></div><a href="https://github.com/tytydraco/LADB" class="download-btn">Source</a></div>
 
-            <div class="app-card">
-                <div class="app-icon">🛡️</div>
-                <div class="app-info"><span class="app-name">InviZible Pro</span><span class="app-desc">DNSCrypt + Tor + I2P.</span></div>
-                <a href="https://f-droid.org/repo/pavel.asatryan.invizible_5901.apk" class="btn">Download</a>
-            </div>
-        </div>
+        <div class="app-item"><div class="app-icon">📡</div><div class="app-details"><span class="app-title">WiFiman</span><span class="app-desc">Network & Signal diagnostics.</span><span class="app-version">Proprietary</span></div><a href="https://play.google.com/store/apps/details?id=com.ubnt.usurvey" class="download-btn">Get</a></div>
 
-        <div class="category-group">
-            <div class="category-title">Network Analysis</div>
+        <div class="app-item"><div class="app-icon">🔍</div><div class="app-details"><span class="app-title">Fing</span><span class="app-desc">Discover devices on your network.</span><span class="app-version">Proprietary</span></div><a href="https://play.google.com/store/apps/details?id=com.overlook.android.fing" class="download-btn">Get</a></div>
 
-            <div class="app-card">
-                <div class="app-icon">🐉</div>
-                <div class="app-info"><span class="app-name">NetHunter Store</span><span class="app-desc">Pentesting apps collection.</span></div>
-                <a href="https://store.nethunter.com/NetHunterStore.apk" class="btn">Download</a>
-            </div>
+        <div class="app-item"><div class="app-icon">🔐</div><div class="app-details"><span class="app-title">Bitwarden</span><span class="app-desc">Open-source password manager.</span><span class="app-version">GPL-3.0</span></div><a href="https://play.google.com/store/apps/details?id=com.x8bitin.bitwarden" class="download-btn">Get</a></div>
 
-            <div class="app-card">
-                <div class="app-icon">📡</div>
-                <div class="app-info"><span class="app-name">WiFiman</span><span class="app-desc">Network & Signal Scan.</span></div>
-                <a href="https://play.google.com/store/apps/details?id=com.ubnt.usurvey" class="btn">Play Store</a>
-            </div>
-        </div>
+        <div class="app-item"><div class="app-icon">🦆</div><div class="app-details"><span class="app-title">DuckDuckGo</span><span class="app-desc">Privacy browser & search.</span><span class="app-version">Apache-2.0</span></div><a href="https://play.google.com/store/apps/details?id=com.duckduckgo.mobile.android" class="download-btn">Get</a></div>
 
         </div>
-
-    <hr style="border: 0; border-top: 1px solid #30363d; margin: 40px 0;">
-    <p style="font-size: 11px; color: var(--desc);">© 2026 Jon00799 | Secure App Repository</p>
 </div>
 
 <script>
 function searchApps() {
     let input = document.getElementById('searchInput').value.toLowerCase();
-    let cards = document.getElementsByClassName('app-card');
-    let categories = document.getElementsByClassName('category-group');
-
-    for (let i = 0; i < cards.length; i++) {
-        let name = cards[i].querySelector('.app-name').innerText.toLowerCase();
-        cards[i].style.display = name.includes(input) ? "flex" : "none";
+    let items = document.getElementsByClassName('app-item');
+    for (let i = 0; i < items.length; i++) {
+        let title = items[i].querySelector('.app-title').innerText.toLowerCase();
+        items[i].style.display = title.includes(input) ? "flex" : "none";
     }
 }
 </script>
